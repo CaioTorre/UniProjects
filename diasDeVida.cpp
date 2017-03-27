@@ -67,7 +67,7 @@ int main() {
 		}
 		double julianoR = 367 * anoR - temp2R + temp3R + diaR + 1721013.5 - (0.5 * temp4R) + 0.5;
 		
-		int diff = julianoA - julianoR;
+		int diff = julianoA - julianoR + 5;
 		
 		printf("Voce tem %i dias de vida!", diff);
 	} else {
