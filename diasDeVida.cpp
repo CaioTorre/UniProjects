@@ -5,18 +5,25 @@
 int main() {
 	int diaA, mesA, anoA, diaR, mesR, anoR, max, fail;
 	
-	diaA = 21;
+	diaA = 27;
 	mesA = 3;
 	anoA = 2017;
 	
 	fail = 0;
 	
-	printf("Dia: ");
+	printf("Dia de Nascimento: ");
 	scanf("%i", &diaR);
-	printf("Mes: ");
+	printf("Mes de Nascimento: ");
 	scanf("%i", &mesR);
-	printf("Ano: ");
+	printf("Ano de Nascimento: ");
 	scanf("%i", &anoR);
+	printf("------------------\n");
+	printf("Dia Atual: ");
+	scanf("%i", &diaA);
+	printf("Mes Atual: ");
+	scanf("%i", &mesA);
+	printf("Ano Atual: ");
+	scanf("%i", &anoA);
 	
 	if (diaR <= 0 || mesR <= 0 || anoR <= 0) {fail = 1;}
 	
@@ -45,6 +52,7 @@ int main() {
 	if (diaR > max) {fail = 1;}
 	
 	if (fail == 0) {
+	    
 		int temp1A = (mesA + 9)/12;
 		int temp2A = (7 * (anoA + temp1A))/4;
 		int temp3A = (275 * mesA)/9;
@@ -67,8 +75,8 @@ int main() {
 		}
 		double julianoR = 367 * anoR - temp2R + temp3R + diaR + 1721013.5 - (0.5 * temp4R) + 0.5;
 		
-		int diff = julianoA - julianoR + 5;
-		
+		int diff = julianoA - julianoR - 1;
+
 		printf("Voce tem %i dias de vida!", diff);
 	} else {
 		printf("Data invalida!\n");
